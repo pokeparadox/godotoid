@@ -1,7 +1,7 @@
 extends KinematicBody2D
 # Declare member variables here. Examples:
 export var acceleration = 0.001
-var speed = 1.0
+var speed = 5.0
 var velocity = Vector2(speed,speed)
 
 # Called when the node enters the scene tree for the first time.
