@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 # Declare member variables here. Examples:
 export var acceleration = 0.001
 var speed = 50.0
