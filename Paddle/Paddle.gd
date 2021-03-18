@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 # Declare member variables here. Examples:
-export var moveRate = 9.0
+export var moveRate = 90.0
 var movementDirection = 0
+var oldX = position.x
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,10 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(movementDirection<0):
-		moveLeft(delta)
-	elif(movementDirection>0):
-		moveRight(delta)
+	move_and_collide(Vector2(movementDirection * moveRate * delta, 0))
 	
 func _input(event):
 	if(event.is_action("ui_left") && !event.is_action_released("ui_left")):
@@ -22,9 +20,3 @@ func _input(event):
 		movementDirection = 1
 	else:
 		movementDirection = 0
-
-func moveLeft(delta):
-	position.x -= moveRate * delta
-	
-func moveRight(delta):
-	position.x += moveRate * delta
