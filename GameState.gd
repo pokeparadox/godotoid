@@ -6,9 +6,9 @@ var bricks = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_setupBricks()
+	setupBricks()
 
-func _setupBricks():
+func setupBricks():
 	var brick = get_node("Brick")
 	var i = 0
 	for y in 6:

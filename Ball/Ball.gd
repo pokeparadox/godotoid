@@ -14,7 +14,7 @@ func _process(delta):
 	position += velocity * delta
 	speed += acceleration * delta
 	
-func _set_direction(newDirection):
+func set_direction(newDirection):
 	velocity = newDirection
 	velocity = velocity.normalized()
 	velocity *= speed
