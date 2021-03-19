@@ -1,9 +1,5 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-var bricks = {}
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setupBricks()

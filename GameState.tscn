@@ -51,3 +51,4 @@ position = Vector2( 420, 115 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallR"]
 position = Vector2( -10, 11 )
 shape = SubResource( 1 )
+[connection signal="Lose" from="Ball" to="." method="_on_Ball_Lose"]
