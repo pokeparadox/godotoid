@@ -51,10 +51,3 @@ position = Vector2( 420, 115 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallR"]
 position = Vector2( -10, 11 )
 shape = SubResource( 1 )
-
-[node name="KillPlane" type="Area2D" parent="."]
-position = Vector2( 210, 250 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlane"]
-position = Vector2( -10, 11 )
-shape = SubResource( 2 )
