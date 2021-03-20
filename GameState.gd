@@ -13,3 +13,12 @@ func setupBricks():
 			brick.position = Vector2((x*40)+halfWidth,y*16+halfHeight)
 			brick.add_to_group("Bricks")
 			add_child(brick)
+
+
+func _on_Ball_BallHit():
+	$Audio.pitch_scale = Global.BallHeight
+	$Audio.play()
+
+
+func _on_Ball_Lose():
+	$Death.play()

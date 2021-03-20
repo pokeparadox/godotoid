@@ -30,4 +30,5 @@ func processCollision(collision):
 		get_parent().remove_child(collision.collider)
 		emit_signal("BrickHit")
 		
+	Global.setBallHeight(position.y)
 	emit_signal("BallHit")

@@ -19,6 +19,10 @@ config/name="Godotoid"
 run/main_scene="res://GameState.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/width=400
