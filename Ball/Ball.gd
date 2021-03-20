@@ -2,6 +2,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 const acceleration = 0.001
 const startSpeed = 0.005
+const maxSpeed = 0.05
 var speed = startSpeed
 var velocity = Vector2(speed,speed)
 onready var startPos = position
@@ -11,7 +12,7 @@ signal BallHit
 signal BrickHit
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var collision = move_and_collide(velocity)
 	if(collision):
 		processCollision(collision)
@@ -23,6 +24,8 @@ func _process(delta):
 	
 func processCollision(collision):
 	speed += acceleration
+	speed = clamp(speed,startSpeed,maxSpeed)
+	
 	if(collision.collider.is_in_group("Bouncy")):
 		velocity = velocity.bounce(collision.normal)
 	if(collision.collider.is_in_group("Bricks")):
@@ -32,3 +35,7 @@ func processCollision(collision):
 		
 	Global.setBallHeight(position.y)
 	emit_signal("BallHit")
+
+func resetBall():
+	position = startPos
+	

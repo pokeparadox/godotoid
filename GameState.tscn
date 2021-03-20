@@ -64,4 +64,6 @@ stream = ExtResource( 6 )
 [node name="Win" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
 [connection signal="BallHit" from="Ball" to="." method="_on_Ball_BallHit"]
+[connection signal="BrickHit" from="Ball" to="." method="_on_Ball_BrickHit"]
 [connection signal="Lose" from="Ball" to="." method="_on_Ball_Lose"]
+[connection signal="finished" from="Win" to="." method="_on_Win_finished"]
