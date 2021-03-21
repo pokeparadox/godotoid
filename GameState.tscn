@@ -63,6 +63,55 @@ stream = ExtResource( 6 )
 
 [node name="Win" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
+
+[node name="Score" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 226.0
+margin_right = 89.0
+margin_bottom = 244.0
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HiScore" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 109.508
+margin_top = 225.927
+margin_right = 195.508
+margin_bottom = 241.927
+text = "Hi: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 346.0
+margin_top = 225.0
+margin_right = 432.0
+margin_bottom = 241.0
+rect_pivot_offset = Vector2( 17.3564, 8 )
+text = "Lvl: 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lives" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 216.0
+margin_top = 225.0
+margin_right = 302.0
+margin_bottom = 241.0
+rect_pivot_offset = Vector2( 17.3564, 8 )
+text = "Lives: 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="BallHit" from="Ball" to="." method="_on_Ball_BallHit"]
 [connection signal="BrickHit" from="Ball" to="." method="_on_Ball_BrickHit"]
 [connection signal="Lose" from="Ball" to="." method="_on_Ball_Lose"]
