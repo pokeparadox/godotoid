@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Paddle/Paddle.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Sound/ping.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sound/dead.wav" type="AudioStream" id=6]
 [ext_resource path="res://Sound/clink.wav" type="AudioStream" id=7]
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0.777344, 0.264175, 0.264175, 1, 0.617188, 0.0554504, 0.0554504, 1 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 125 )
@@ -27,6 +30,44 @@ position = Vector2( 168, 216 )
 
 [node name="Brick" parent="." instance=ExtResource( 3 )]
 position = Vector2( -100, -100 )
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.76
+randomness = 0.31
+emission_shape = 2
+emission_rect_extents = Vector2( 5, 5 )
+gravity = Vector2( 0, 15 )
+initial_velocity = 1.13
+initial_velocity_random = 1.0
+angular_velocity = 0.17
+angular_velocity_random = 0.6
+linear_accel = 0.48
+tangential_accel_random = 0.19
+angle_random = 0.23
+color_ramp = SubResource( 3 )
+hue_variation_random = 0.22
+
+[node name="Particles2" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.76
+randomness = 0.31
+emission_shape = 2
+emission_rect_extents = Vector2( 5, 5 )
+gravity = Vector2( 0, 15 )
+initial_velocity = 1.13
+initial_velocity_random = 1.0
+angular_velocity = 0.17
+angular_velocity_random = 0.6
+linear_accel = 0.48
+tangential_accel_random = 0.19
+angle_random = 0.23
+color_ramp = SubResource( 3 )
+hue_variation_random = 0.22
 
 [node name="WallL" type="StaticBody2D" parent="." groups=[
 "Bouncy",

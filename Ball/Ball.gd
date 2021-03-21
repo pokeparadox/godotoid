@@ -30,6 +30,15 @@ func processCollision(collision):
 		velocity = velocity.bounce(collision.normal)
 	if(collision.collider.is_in_group("Bricks")):
 		velocity = velocity.bounce(collision.normal).normalized()*speed
+		var particles = get_parent().get_node("Particles")
+		if(!particles.emitting):
+			particles.position = collision.collider.position
+			particles.emitting = true
+		else:
+			var particles2 = get_parent().get_node("Particles2")
+			particles2.position = collision.collider.position
+			particles2.emitting = true
+			
 		get_parent().remove_child(collision.collider)
 		emit_signal("BrickHit")
 		
