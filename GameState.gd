@@ -8,7 +8,9 @@ func _ready():
 	setLives(Global.StartLives)
 	setScore(0)
 	setupBricks()
-
+	Global.loadSave()
+	setHiScore(Global.hiScore)
+	
 func setupBricks():
 	var halfWidth = $Brick/Sprite.texture.get_width()/2
 	var halfHeight = $Brick/Sprite.texture.get_height()/2
@@ -85,3 +87,4 @@ func setLevel(lvl):
 func setHiScore(hi):
 	Global.hiScore = hi
 	$HiScore.text = "Hi:" + String(hi)
+	Global.saveHiScore()

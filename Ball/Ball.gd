@@ -24,7 +24,7 @@ func _process(_delta):
 	
 func processCollision(collision):
 	speed += acceleration
-	speed = clamp(speed,startSpeed,maxSpeed)
+	speed = clamp(speed,startSpeed,maxSpeed + Global.level * 0.001)
 	
 	if(collision.collider.is_in_group("Bouncy")):
 		velocity = velocity.bounce(collision.normal)
@@ -47,4 +47,6 @@ func processCollision(collision):
 
 func resetBall():
 	position = startPos
+	speed = startSpeed + Global.level * 0.001
+	velocity = velocity.normalized() * speed
 	

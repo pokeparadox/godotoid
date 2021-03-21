@@ -8,13 +8,13 @@
 [ext_resource path="res://Sound/dead.wav" type="AudioStream" id=6]
 [ext_resource path="res://Sound/clink.wav" type="AudioStream" id=7]
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.777344, 0.264175, 0.264175, 1, 0.617188, 0.0554504, 0.0554504, 1 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 125 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 220, 10 )
 
 [node name="GameState" type="Node2D"]
@@ -47,7 +47,7 @@ angular_velocity_random = 0.6
 linear_accel = 0.48
 tangential_accel_random = 0.19
 angle_random = 0.23
-color_ramp = SubResource( 3 )
+color_ramp = SubResource( 1 )
 hue_variation_random = 0.22
 
 [node name="Particles2" type="CPUParticles2D" parent="."]
@@ -66,7 +66,7 @@ angular_velocity_random = 0.6
 linear_accel = 0.48
 tangential_accel_random = 0.19
 angle_random = 0.23
-color_ramp = SubResource( 3 )
+color_ramp = SubResource( 1 )
 hue_variation_random = 0.22
 
 [node name="WallL" type="StaticBody2D" parent="." groups=[
@@ -76,7 +76,7 @@ position = Vector2( 0, 119 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallL"]
 position = Vector2( -10, 7 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Top" type="StaticBody2D" parent="." groups=[
 "Bouncy",
@@ -85,7 +85,7 @@ position = Vector2( 210, -14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
 position = Vector2( -10, 5 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="WallR" type="StaticBody2D" parent="." groups=[
 "Bouncy",
@@ -94,7 +94,7 @@ position = Vector2( 420, 115 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallR"]
 position = Vector2( -10, 11 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
