@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Paddle/Paddle.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sound/ping.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sound/dead.wav" type="AudioStream" id=6]
 [ext_resource path="res://Sound/clink.wav" type="AudioStream" id=7]
+[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.777344, 0.264175, 0.264175, 1, 0.617188, 0.0554504, 0.0554504, 1 )
@@ -153,7 +154,20 @@ text = "Lives: 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PauseMenu" parent="." instance=ExtResource( 8 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 202.0
+margin_top = 177.0
+margin_right = 202.0
+margin_bottom = 177.0
 [connection signal="BallHit" from="Ball" to="." method="_on_Ball_BallHit"]
 [connection signal="BrickHit" from="Ball" to="." method="_on_Ball_BrickHit"]
 [connection signal="Lose" from="Ball" to="." method="_on_Ball_Lose"]
 [connection signal="finished" from="Win" to="." method="_on_Win_finished"]
+[connection signal="onContinue" from="PauseMenu" to="." method="_on_PauseMenu_onContinue"]
+[connection signal="onQuit" from="PauseMenu" to="." method="_on_PauseMenu_onQuit"]

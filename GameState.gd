@@ -2,8 +2,6 @@ extends Node2D
 
 onready var bounceCount = 0
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	setLives(Global.StartLives)
 	setScore(0)
@@ -88,3 +86,12 @@ func setHiScore(hi):
 	Global.hiScore = hi
 	$HiScore.text = "Hi:" + String(hi)
 	Global.saveHiScore()
+
+
+func _input(event):
+	if(event.is_action_pressed("ui_accept")):
+		get_tree().paused = true
+		$PauseMenu.visible = true
+		
+func _on_PauseMenu_onQuit():
+	Global.changeScene("res://Title.tscn")

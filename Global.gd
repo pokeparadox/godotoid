@@ -15,6 +15,9 @@ var saveFile = File.new()
 var savePath = "user://savegame.save"
 var saveData = {"highscore": 0} 
 
+func changeScene(scene):
+	return get_tree().change_scene(scene)
+
 func createSave():
    saveFile.open(savePath, File.WRITE)
    saveFile.store_var(saveData)
