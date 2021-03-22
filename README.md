@@ -1,4 +1,5 @@
 # Godotoid
 BreakOut Style Game ported from Penjinoid by BZar (https://github.com/bzar/penjinoid)
+![image](https://user-images.githubusercontent.com/816975/112047164-d1deab00-8b44-11eb-8adc-faee302779ea.png)
 
 I'm trying to get more cofortable with Godot engine again and this is a "practice" project to try and make a complete and functional game based on Penjinoid which was a example game created for my C++ Game Engine PenjinTwo (https://github.com/pokeparadox/PenjinTwo)
