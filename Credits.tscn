@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Credits.gd" type="Script" id=1]
+
+[node name="Control" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+margin_right = 380.0
+margin_bottom = 220.0
+
+[node name="Back" type="Button" parent="VSplitContainer"]
+margin_right = 380.0
+margin_bottom = 20.0
+text = "< Back"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="VSplitContainer"]
+margin_top = 32.0
+margin_right = 380.0
+margin_bottom = 220.0
+
+[node name="CreditsLicense" type="Label" parent="VSplitContainer/VSplitContainer"]
+margin_right = 380.0
+margin_bottom = 14.0
+text = "Credits and Licenses:"
+
+[node name="Scroll" type="ScrollContainer" parent="VSplitContainer/VSplitContainer"]
+margin_top = 26.0
+margin_right = 380.0
+margin_bottom = 188.0
+
+[node name="Text" type="RichTextLabel" parent="VSplitContainer/VSplitContainer/Scroll"]
+margin_right = 368.0
+margin_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "BZar: Original Penjinoid game example.
+Godot: Godot Engine
+Godotoid: PokeParadox
+
+Placeholder... etc...
+
+Godot License
+3rd Party Licenses etc..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+And YOU! )>}}}}'>.o0"
+fit_content_height = true
+[connection signal="button_down" from="VSplitContainer/Back" to="." method="_on_Back_button_down"]
