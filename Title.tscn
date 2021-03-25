@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Title.gd" type="Script" id=1]
+[ext_resource path="res://Images/GodotoidLogo.png" type="Texture" id=2]
 
 [node name="Control" type="MarginContainer"]
 anchor_right = 1.0
@@ -17,29 +18,28 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 300.0
 margin_bottom = 120.0
+alignment = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
-margin_right = 300.0
-margin_bottom = 15.0
-text = "Godotoid"
-fit_content_height = true
+[node name="Sprite" type="Sprite" parent="VBoxContainer"]
+position = Vector2( 151, -12 )
+texture = ExtResource( 2 )
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-margin_top = 19.0
+margin_top = 52.0
 margin_right = 300.0
-margin_bottom = 39.0
+margin_bottom = 72.0
 text = "Start"
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
-margin_top = 43.0
+margin_top = 76.0
 margin_right = 300.0
-margin_bottom = 63.0
+margin_bottom = 96.0
 text = "Credits"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
-margin_top = 67.0
+margin_top = 100.0
 margin_right = 300.0
-margin_bottom = 87.0
+margin_bottom = 120.0
 text = "Quit"
 [connection signal="button_down" from="VBoxContainer/Start" to="." method="_on_Start_button_down"]
 [connection signal="button_down" from="VBoxContainer/Credits" to="." method="_on_Credits_button_down"]

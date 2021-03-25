@@ -40,12 +40,13 @@ margin_bottom = 188.0
 
 [node name="Text" type="RichTextLabel" parent="VSplitContainer/VSplitContainer/Scroll"]
 margin_right = 368.0
-margin_bottom = 1350.0
+margin_bottom = 1470.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "BZar: Original Penjinoid game example.
-Godot: Godot Engine
-Godotoid: PokeParadox
+Godot: Godot Engine Team
+Godot Logo: Andrea Calabró
+Godotoid and Godotoid Logo: PokeParadox
 Pirate Games 2021
 -------------------------------------------------------
 This game made possible using the following projects:
@@ -83,6 +84,11 @@ Licensed under the Apache License, Version 2.0 (the \"License\"); you may not us
 
 http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+-------------------------------------------------------
+
+Godot Logo
+Godot Logo © Andrea Calabró Distributed under the terms of the Creative Commons Attribution License version 3.0 (CC-BY 3.0) https:/
+creativecommons.org/licenses/by/3.0/legalcode"
 fit_content_height = true
 [connection signal="button_down" from="VSplitContainer/Back" to="." method="_on_Back_button_down"]
