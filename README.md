@@ -1,4 +1,6 @@
 # Godotoid
+![GodotoidLogo](https://user-images.githubusercontent.com/816975/112551451-edea8280-8db8-11eb-85f6-01633a5aacfe.png)
+
 ## About
 BreakOut Style Game ported from [Penjinoid](https://github.com/bzar/penjinoid) by BZar 
 ![image](https://user-images.githubusercontent.com/816975/112047164-d1deab00-8b44-11eb-8adc-faee302779ea.png)
