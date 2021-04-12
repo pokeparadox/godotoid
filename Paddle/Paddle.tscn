@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Paddle/paddle.png" type="Texture" id=1]
+[ext_resource path="res://Paddle/Paddle.gd" type="Script" id=2]
+
+[node name="Paddle" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -1, 2 )
+polygon = PoolVector2Array( -30.4928, 3.80617, -29.0786, 5.39716, 30.4952, 5.57394, 32.4397, 4.51327, 32.6165, -8.21465, 9.28197, -9.27531, -10.1635, -9.27531, -30.316, -7.86109 )
