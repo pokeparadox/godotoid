@@ -21,7 +21,7 @@ I'm trying to get more cofortable with Godot engine again and this is a "practic
 * Lose condition.
 * Angled rebound from edges of paddle.
 * Sound effects for collision, win and lose.
-* Collision sound effect changes with ball height.
+* Collision sound effect changes with ball height and left/right position.
 * Simple Title/Menu
 * Pause/Resume menu.
 
