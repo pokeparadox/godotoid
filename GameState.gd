@@ -20,11 +20,15 @@ func setupBricks():
 			add_child(brick)
 
 func _on_Ball_BallHit():
-	$Audio.pitch_scale = Global.BallHeight
-	$Audio.position = $Ball.position
-	$Audio.play()
-	bounceCount = bounceCount + 1
-	addScore(Global.BouncePoint * bounceCount)
+	if(!$Audio.playing):
+		$Audio.pitch_scale = Global.BallHeight
+		$Audio.position = $Ball.position
+		$Audio.play()
+		bounceCount = bounceCount + 1
+		addScore(Global.BouncePoint * bounceCount)
+	else:
+		$Ball.position.y = $Ball.position.y - 8
+		$Ball.velocity.y = -abs($Ball.velocity.y)
 
 func _on_Ball_Lose():
 	$Death.play()

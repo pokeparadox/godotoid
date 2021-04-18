@@ -3,6 +3,7 @@ extends KinematicBody2D
 const acceleration = 0.001
 const startSpeed = 0.005
 const maxSpeed = 0.05
+var lastPos = position
 var speed = startSpeed
 var velocity = Vector2(speed,speed)
 onready var startPos = position
@@ -13,6 +14,7 @@ signal BrickHit
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	lastPos = position
 	var collision = move_and_collide(velocity)
 	if(collision):
 		processCollision(collision)
@@ -22,7 +24,8 @@ func processCollision(collision):
 	speed = clamp(speed,startSpeed,maxSpeed + Global.level * 0.001)
 	
 	if(collision.collider.is_in_group("Bouncy")):
-		velocity = velocity.bounce(collision.normal)
+		position = lastPos
+		velocity = velocity.bounce(collision.normal).normalized()*speed
 	if(collision.collider.is_in_group("Bricks")):
 		velocity = velocity.bounce(collision.normal).normalized()*speed
 		var particles = get_parent().get_node("Particles")
