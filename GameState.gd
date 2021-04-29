@@ -75,6 +75,7 @@ func takeLife():
 			setHiScore(Global.score)
 		setScore(0)
 		setLives(Global.StartLives)
+		setLevel(1)
 		setupBricks()
 		while($Death.playing):
 			yield(get_tree().create_timer(1.0), "timeout")
@@ -103,6 +104,7 @@ func _input(event):
 		
 func pauseGame():
 	get_tree().paused = true
+	$PauseMenu.pause_mode = Node.PAUSE_MODE_PROCESS
 	$PauseMenu.visible = true
 		
 func _on_PauseMenu_onQuit():

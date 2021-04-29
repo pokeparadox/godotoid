@@ -1,5 +1,8 @@
 extends MarginContainer
 
+func _ready():
+	$VBoxContainer/Start.grab_focus()
+
 func _on_Start_button_down():
 	Global.changeScene("res://GameState.tscn")
 

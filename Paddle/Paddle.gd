@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Declare member variables here. Examples:
-export var moveRate = 0.05
+export var moveRate = 1.5
 var movementDirection = 0
 onready var startHeight = position.y
 
@@ -17,5 +17,5 @@ func _process(_delta):
 	else:
 		movementDirection = 0
 		
-	var _result = move_and_collide(Vector2(movementDirection * (moveRate + Global.level * 0.001) , 0))
+	var _result = move_and_collide(Vector2(movementDirection * (moveRate + Global.level * 0.1) , 0))
 	

@@ -91,4 +91,5 @@ Godot Logo
 Godot Logo © Andrea Calabró Distributed under the terms of the Creative Commons Attribution License version 3.0 (CC-BY 3.0) https:/
 creativecommons.org/licenses/by/3.0/legalcode"
 fit_content_height = true
+
 [connection signal="button_down" from="VSplitContainer/Back" to="." method="_on_Back_button_down"]

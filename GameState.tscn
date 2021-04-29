@@ -175,6 +175,7 @@ position = Vector2( -10, 267 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea"]
 position = Vector2( 210, 38 )
 shape = SubResource( 4 )
+
 [connection signal="BallHit" from="Ball" to="." method="_on_Ball_BallHit"]
 [connection signal="BrickHit" from="Ball" to="." method="_on_Ball_BrickHit"]
 [connection signal="Lose" from="Ball" to="." method="_on_Ball_Lose"]

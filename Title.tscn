@@ -41,6 +41,7 @@ margin_top = 100.0
 margin_right = 300.0
 margin_bottom = 120.0
 text = "Quit"
+
 [connection signal="button_down" from="VBoxContainer/Start" to="." method="_on_Start_button_down"]
 [connection signal="button_down" from="VBoxContainer/Credits" to="." method="_on_Credits_button_down"]
 [connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_Quit_button_down"]
