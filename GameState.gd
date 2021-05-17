@@ -10,6 +10,13 @@ func _ready():
 	setHiScore(Global.hiScore)
 	
 func setupBricks():
+	var bricks = get_tree().get_nodes_in_group("Bricks")
+	if(bricks):
+		for b in bricks:
+			remove_child(b)
+			
+		bricks.clear()
+	
 	var halfWidth = $Brick/Sprite.texture.get_width()/2
 	var halfHeight = $Brick/Sprite.texture.get_height()/2
 	for y in 6:
@@ -27,8 +34,13 @@ func _on_Ball_BallHit():
 		bounceCount = bounceCount + 1
 		addScore(Global.BouncePoint * bounceCount)
 	else:
-		$Ball.position.y = $Ball.position.y - 8
-		$Ball.velocity.y = -abs($Ball.velocity.y)
+		var halfHeight = OS.get_screen_size().y * 0.5
+		var direction = -1
+		
+		if($Ball.position.y < halfHeight):
+			direction = 1
+		$Ball.position.y = $Ball.position.y - ($Ball/CollisionShape2D.shape.radius * direction)
+		$Ball.velocity.y = $Ball.velocity.y * direction
 
 func _on_Ball_Lose():
 	$Death.play()
