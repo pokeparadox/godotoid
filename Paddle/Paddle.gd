@@ -29,18 +29,21 @@ func _process(_delta):
 	var _result = move_and_collide(Vector2(movementDirection * (moveRate + Global.level * 0.1) , 0))
 	
 
-
 func _on_TouchLeft_pressed():
-	leftPressed = true
+	if(Global.touchEnabled):
+		leftPressed = true
 
 
 func _on_TouchRight_pressed():
-	rightPressed = true
+	if(Global.touchEnabled):
+		rightPressed = true
 
 
 func _on_TouchRight_released():
-	rightPressed = false
+	if(Global.touchEnabled):
+		rightPressed = false
 
 
 func _on_TouchLeft_released():
-	leftPressed = false
+	if(Global.touchEnabled):
+		leftPressed = false

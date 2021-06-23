@@ -13,3 +13,7 @@ func _on_Credits_button_down():
 
 func _on_Quit_button_down():
 	get_tree().quit()
+
+
+func _on_CheckButton_toggled(button_pressed):
+	Global.touchEnabled = button_pressed

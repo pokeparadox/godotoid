@@ -14,6 +14,7 @@ var lives = 3
 var saveFile = File.new()
 var savePath = "user://savegame.save"
 var saveData = {"highscore": 0} 
+var touchEnabled = false
 
 func changeScene(scene):
 	return get_tree().change_scene(scene)

@@ -8,6 +8,8 @@ func _ready():
 	setupBricks()
 	Global.loadSave()
 	setHiScore(Global.hiScore)
+	$TouchLeft.visible = Global.touchEnabled
+	$TouchRight.visible = Global.touchEnabled
 	
 func setupBricks():
 	var bricks = get_tree().get_nodes_in_group("Bricks")

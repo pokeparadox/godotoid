@@ -16,32 +16,41 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.175
+anchor_bottom = 0.175
 margin_right = 300.0
 margin_bottom = 120.0
 alignment = 2
 
 [node name="Sprite" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 151, -12 )
+position = Vector2( 151, -32 )
 texture = ExtResource( 2 )
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-margin_top = 52.0
+margin_top = 8.0
 margin_right = 300.0
-margin_bottom = 72.0
+margin_bottom = 28.0
 text = "Start"
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
-margin_top = 76.0
+margin_top = 32.0
 margin_right = 300.0
-margin_bottom = 96.0
+margin_bottom = 52.0
 text = "Credits"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
-margin_top = 100.0
+margin_top = 56.0
+margin_right = 300.0
+margin_bottom = 76.0
+text = "Quit"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer"]
+margin_top = 80.0
 margin_right = 300.0
 margin_bottom = 120.0
-text = "Quit"
+text = "Touch Controls"
 
 [connection signal="button_down" from="VBoxContainer/Start" to="." method="_on_Start_button_down"]
 [connection signal="button_down" from="VBoxContainer/Credits" to="." method="_on_Credits_button_down"]
 [connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_Quit_button_down"]
+[connection signal="toggled" from="VBoxContainer/CheckButton" to="." method="_on_CheckButton_toggled"]
