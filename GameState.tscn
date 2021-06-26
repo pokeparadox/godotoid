@@ -185,13 +185,11 @@ shape = SubResource( 4 )
 position = Vector2( 6, 158 )
 normal = ExtResource( 9 )
 shape = SubResource( 5 )
-visibility_mode = 1
 
 [node name="TouchRight" type="TouchScreenButton" parent="."]
 position = Vector2( 342, 158 )
 normal = ExtResource( 10 )
 shape = SubResource( 5 )
-visibility_mode = 1
 
 [connection signal="BallHit" from="Ball" to="." method="_on_Ball_BallHit"]
 [connection signal="BrickHit" from="Ball" to="." method="_on_Ball_BrickHit"]
