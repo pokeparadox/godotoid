@@ -7,6 +7,8 @@ var lastPos = position
 var speed = startSpeed
 var velocity = Vector2(speed,speed)
 onready var startPos = position
+var InDebounceAreaL = false
+var InDebounceAreaR = false
 
 signal Lose
 signal BallHit
@@ -54,3 +56,21 @@ func _on_KillArea_body_entered(_body):
 	velocity = velocity.normalized()*speed
 	position = startPos
 	emit_signal("Lose")
+
+func IsInDebounceArea():
+	return InDebounceAreaL || InDebounceAreaR
+
+func _on_DebounceAreaL_area_entered(_area):
+	InDebounceAreaL = true
+
+
+func _on_DebounceAreaR_area_entered(_area):
+	InDebounceAreaR = true
+
+
+func _on_DebounceAreaL_area_exited(_area):
+	InDebounceAreaL = false
+
+
+func _on_DebounceAreaR_area_exited(_area):
+	InDebounceAreaR = false

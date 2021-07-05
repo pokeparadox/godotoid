@@ -29,19 +29,16 @@ func setupBricks():
 			add_child(brick)
 
 func _on_Ball_BallHit():
+	var radius = $Ball/CollisionShape2D.shape.radius 
 	if(!$Audio.playing):
 		$Audio.pitch_scale = Global.BallHeight
-		$Audio.position = $Ball.position
+		$Audio.position = $Ball.position + Vector2(radius, radius)
 		$Audio.play()
 		bounceCount = bounceCount + 1
 		addScore(Global.BouncePoint * bounceCount)
-	else:
-		var halfHeight = OS.get_screen_size().y * 0.5
+	elif($Ball.IsInDebounceArea() && $Audio.playing):
 		var direction = -1
-		
-		if($Ball.position.y < halfHeight):
-			direction = 1
-		$Ball.position.y = $Ball.position.y - ($Ball/CollisionShape2D.shape.radius * direction)
+		$Ball.position.y = $Ball.position.y - (radius* direction)
 		$Ball.velocity.y = $Ball.velocity.y * direction
 
 func _on_Ball_Lose():
